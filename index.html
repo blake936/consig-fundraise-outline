@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Narrative Fundraise Deck Outline — Consigliere Labs</title>
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --surface: #141414;
+      --surface-2: #1a1a1a;
+      --border: #2a2a2a;
+      --text: #e8e8e8;
+      --text-muted: #999;
+      --accent: #c9a44a;
+      --accent-dim: rgba(201, 164, 74, 0.12);
+      --green: #4ade80;
+      --green-dim: rgba(74, 222, 128, 0.1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 60px 24px 120px;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      padding: 80px 0 60px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 60px;
+    }
+
+    .header-label {
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .header h1 {
+      font-size: 42px;
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+
+    .header .subtitle {
+      font-size: 20px;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .header .date {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 20px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* Slide sections */
+    .slide {
+      margin-bottom: 64px;
+      padding-bottom: 64px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .slide:last-child {
+      border-bottom: none;
+    }
+
+    .slide-label {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    h2 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 24px;
+      letter-spacing: -0.5px;
+    }
+
+    h3 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #fff;
+      margin: 32px 0 16px;
+    }
+
+    h4 {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 24px 0 12px;
+    }
+
+    p {
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    strong { color: #fff; }
+
+    em {
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    ul, ol {
+      margin: 16px 0;
+      padding-left: 24px;
+    }
+
+    li {
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    li::marker {
+      color: var(--accent);
+    }
+
+    /* Callout boxes */
+    .callout {
+      background: var(--surface);
+      border-left: 3px solid var(--accent);
+      padding: 24px 28px;
+      margin: 24px 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .callout-green {
+      background: var(--green-dim);
+      border-left-color: var(--green);
+    }
+
+    .callout p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Quote blocks for customer language */
+    blockquote {
+      background: var(--surface);
+      border-left: 3px solid var(--accent);
+      padding: 20px 24px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    blockquote p {
+      font-style: italic;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    blockquote .result {
+      font-style: normal;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    /* Two-column layout */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin: 24px 0;
+    }
+
+    .col {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+    }
+
+    .col h4 {
+      margin-top: 0;
+    }
+
+    /* Data structure flow */
+    .flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 28px 0;
+      flex-wrap: wrap;
+      font-size: 15px;
+    }
+
+    .flow-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .flow-arrow {
+      color: var(--accent);
+      font-size: 18px;
+    }
+
+    /* Flywheel */
+    .flywheel {
+      background: var(--accent-dim);
+      border: 1px solid rgba(201, 164, 74, 0.25);
+      border-radius: 12px;
+      padding: 28px;
+      margin: 24px 0;
+      text-align: center;
+    }
+
+    .flywheel p {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--accent);
+      margin-bottom: 0;
+    }
+
+    /* Stats row */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .stat {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* Traction cards */
+    .traction-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin: 16px 0;
+    }
+
+    .traction-card h4 {
+      margin-top: 0;
+      color: #fff;
+      font-size: 18px;
+    }
+
+    .traction-detail {
+      color: var(--text-muted);
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .traction-detail strong {
+      color: var(--accent);
+    }
+
+    /* Team grid */
+    .team-section {
+      margin: 24px 0;
+    }
+
+    .team-member {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .team-member:last-child {
+      border-bottom: none;
+    }
+
+    .team-name {
+      font-weight: 700;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .team-role {
+      color: var(--accent);
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .team-detail {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    /* Invest list */
+    .invest-list {
+      list-style: none;
+      padding: 0;
+      counter-reset: invest;
+    }
+
+    .invest-list li {
+      counter-increment: invest;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .invest-list li:last-child {
+      border-bottom: none;
+    }
+
+    .invest-list li::before {
+      content: counter(invest);
+      background: var(--accent-dim);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 14px;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
+    /* Demo placeholder */
+    .demo-block {
+      background: var(--surface-2);
+      border: 2px dashed var(--border);
+      border-radius: 12px;
+      padding: 40px;
+      text-align: center;
+      margin: 28px 0;
+    }
+
+    .demo-block p {
+      color: var(--text-muted);
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .demo-block strong {
+      color: var(--accent);
+    }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+      padding: 60px 0 0;
+    }
+
+    .cta h2 {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+
+    .cta p {
+      font-size: 18px;
+      color: var(--text-muted);
+    }
+
+    /* Bold italic callout */
+    .key-insight {
+      font-style: italic;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .header h1 { font-size: 30px; }
+      h2 { font-size: 24px; }
+      .two-col { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: 1fr 1fr; }
+      .container { padding: 32px 16px 80px; }
+      .header { padding: 48px 0 40px; }
+      .flow { font-size: 13px; }
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-label">Consigliere Labs</div>
+    <h1>Narrative Fundraise Deck Outline</h1>
+    <div class="subtitle">AI-powered gold mining for modern brands</div>
+    <div class="date">March 2026</div>
+  </div>
+
+  <!-- Intro -->
+  <div class="slide">
+    <div class="slide-label">Intro — Spoken Before Slide 1</div>
+    <h2>The Setup</h2>
+    <p>Today, with AI, we can make almost anything. But the hard part isn't making things anymore. The hard part is knowing what's actually true.</p>
+    <p>Marketing is still one of the few capital-intensive functions where companies scale spend based mostly on belief — on what they think might work.</p>
+    <p>Other industries built systems to discover truth before deploying capital. Oil has surveying, sampling, and shallow drilling. Finance has risk models, stress tests, and quantitative trading.</p>
+    <p><strong>Marketing never built that layer.</strong></p>
+    <p>That's what Consigliere is building. A system — powered by AI — that helps discover which marketing signals are actually true before brands scale spend.</p>
+    <p>Under the hood, it's a network of agents, skills, and proprietary data connected through MCP, which allows the system to plug into any AI model and operate across them.</p>
+  </div>
+
+  <!-- Slide 1 -->
+  <div class="slide">
+    <div class="slide-label">Slide 1 — Title</div>
+    <h2>Consigliere Labs</h2>
+    <p style="font-size: 20px; color: var(--text-muted);">AI-powered gold mining for modern brands</p>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="slide">
+    <div class="slide-label">Slide 2</div>
+    <h2>The Old World vs. The New World</h2>
+
+    <div class="two-col">
+      <div class="col">
+        <h4 style="color: var(--text-muted);">Old World (Dying)</h4>
+        <ul>
+          <li>Brands built 10–100 assets</li>
+          <li>Deployed dollars across channels</li>
+          <li>Scaled spend until plateau</li>
+          <li>Creative was a "campaign" exercise — formal, slow, layered approvals</li>
+          <li>20% YoY growth ceiling</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4 style="color: var(--green);">New World (Winning)</h4>
+        <ul>
+          <li>Brands need 10,000+ assets</li>
+          <li>Hyper-niche personas and characters</li>
+          <li>Constant sampling → signal detection → drilling down</li>
+          <li>AI-enabled sourcing, synthesis, and delivery</li>
+          <li>Creative is an always-on operating system</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p><strong>The gap:</strong> Most brands can't execute this. They don't have the teams, the AI know-how, or the systems.</p>
+    </div>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="slide">
+    <div class="slide-label">Slide 3</div>
+    <h2>What We Do</h2>
+    <p><strong>Consigliere is gold mining infrastructure for modern brands.</strong></p>
+    <p>We build the systems to:</p>
+    <ul>
+      <li>Extract signal from billions of available data points</li>
+      <li>Sample broadly and cheaply (find specks of gold)</li>
+      <li>Drill down with escalating investment where the data shows gold exists</li>
+    </ul>
+
+    <h4>The analogy:</h4>
+    <ul>
+      <li>Technology detects potential deposits</li>
+      <li>10,000+ core samples taken simultaneously</li>
+      <li>High-likelihood locations identified</li>
+      <li>Systematic drilling where the largest deposits sit</li>
+    </ul>
+
+    <div class="callout">
+      <p><strong>What we're really building:</strong> A system that...</p>
+      <ol>
+        <li>Discovers which persuasion signals actually drive algorithmic growth</li>
+        <li>Compounds that learning over time.</li>
+      </ol>
+    </div>
+
+    <h4>The data structure:</h4>
+    <div class="flow">
+      <span class="flow-item">Persona</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-item">Signal</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-item">Angle</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-item">Primitive</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-item">Variant</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-item">Performance</span>
+    </div>
+    <p>Every experiment maps back to this hierarchy. Over time, the system learns which signals drive results for which personas — and that learning compounds.</p>
+
+    <h4>Three layers:</h4>
+    <ul>
+      <li><strong>Signal Mining</strong> — Extract raw signals from customer language: reviews, ad comments, communities, trends.</li>
+      <li><strong>Signal Testing</strong> — Run structured creative experiments around those signals at massive scale.</li>
+      <li><strong>Signal Intelligence</strong> — Learn which signals consistently produce results. The database grows with every experiment.</li>
+    </ul>
+  </div>
+
+  <!-- Slide 4 -->
+  <div class="slide">
+    <div class="slide-label">Slide 4</div>
+    <h2>How It Works</h2>
+
+    <h4>1. Research & Signal Extraction</h4>
+    <p>AI ingests reviews, ad comments, niche communities, trends, etc., and surfaces 200+ hyper-specific insights per week for human review. The gold is buried in raw customer language:</p>
+
+    <blockquote>
+      <p>"I'm a pregnant woman, and I instantly started investigating everything in my house."</p>
+      <div class="result">→ Mother's Day became the second biggest moment for Caraway cookware</div>
+    </blockquote>
+
+    <blockquote>
+      <p>"I've been on Ozempic for a couple of months, and I've been really struggling with my poop."</p>
+      <div class="result">→ Selling fiber benefits of GRUNS to GLP-1 users became a major revenue breakthrough</div>
+    </blockquote>
+
+    <h4>2. Low-Cost Sampling (Statics)</h4>
+    <ul>
+      <li>Rapid creative testing at massive scale</li>
+      <li>Find winning signals before heavy investment</li>
+    </ul>
+
+    <h4>3. Drilling Deep (Once Gold Is Found)</h4>
+    <ul>
+      <li>Sub-angle testing to sharpen the message</li>
+      <li>UGC video + creator partnerships matched to the signal</li>
+      <li>Persona-matched landing pages</li>
+      <li>Email/SMS capture and personalization</li>
+    </ul>
+
+    <h4>4. Monthly Exploration Cycles</h4>
+    <ul>
+      <li>New territory is explored each month based on research</li>
+      <li>Cross-functional execution, tight loops, run constantly</li>
+    </ul>
+
+    <div class="callout">
+      <p>The advantage is <strong>execution density.</strong> Lots of tight loops, run constantly, coordinated across channels.</p>
+    </div>
+  </div>
+
+  <!-- Slide 5 -->
+  <div class="slide">
+    <div class="slide-label">Slide 5</div>
+    <h2>The MCP</h2>
+    <p><strong>Under the hood: a network of AI agents, skills, and proprietary data connected through MCP (Model Context Protocol).</strong></p>
+
+    <p>What this means:</p>
+    <ul>
+      <li><strong>Model-agnostic.</strong> Works across Claude, GPT, Gemini — whatever comes next. As models improve, the system improves.</li>
+      <li><strong>Composable.</strong> Agents plug together to handle research, creative strategy, performance analysis, and reporting.</li>
+      <li><strong>Proprietary data layer.</strong> The signal database sits on top of MCP. It's our data, not any model provider's.</li>
+      <li><strong>Co-developed with Meta AI engineering.</strong> Core platform validated. IP confirmed as Consigliere's (signed agreement).</li>
+    </ul>
+
+    <div class="callout">
+      <p><em class="key-insight">Why this matters: The system isn't locked to one AI model. It evolves with the ecosystem. And every experiment feeds a proprietary dataset that compounds over time.</em></p>
+    </div>
+
+    <div class="flywheel">
+      <p><strong>The flywheel:</strong> Services generate data → data improves MCP → MCP improves signal discovery → signal discovery drives better results.</p>
+      <br>
+      <p style="color: var(--text); font-weight: 400;">That flywheel builds a defensible platform.</p>
+    </div>
+
+    <div class="demo-block">
+      <p><strong>[LIVE MCP DEMO]</strong></p>
+      <p>Let me show you what it looks like, live.</p>
+    </div>
+  </div>
+
+  <!-- Slide 6 -->
+  <div class="slide">
+    <div class="slide-label">Slide 6</div>
+    <h2>Business Model — Bond + Call Option</h2>
+
+    <div class="two-col">
+      <div class="col">
+        <h4>CORE (The Bond)</h4>
+        <ul>
+          <li>Large, established consumer brands</li>
+          <li>Significant spend, large customer base, wide signal surface area</li>
+          <li>Monthly licensing/service fee</li>
+          <li>High cash flow, high margin, predictable revenue</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>INCUBATOR (The Call Option)</h4>
+        <ul>
+          <li>Early-stage consumer brands with breakout potential</li>
+          <li>Lower monthly fee + equity upside</li>
+          <li>Consigliere deploys the full system as the growth engine</li>
+          <li>Small ownership stake + right to invest in future rounds</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p><em class="key-insight">Core clients fund the platform and generate signal data at scale. Incubator brands create asymmetric equity upside. Both feed the system.</em></p>
+    </div>
+  </div>
+
+  <!-- Slide 7 -->
+  <div class="slide">
+    <div class="slide-label">Slide 7</div>
+    <h2>Why Now</h2>
+
+    <h4>1. Algorithms now choose creatives, not audiences.</h4>
+    <p>Meta, TikTok, Amazon — they all evaluate creative signals to determine delivery. Creative IS targeting. Brands that discover the best signals win.</p>
+
+    <h4>2. AI makes the system possible.</h4>
+    <p>What took weeks now takes hours. The MCP architecture means we're not locked to one model — the system improves as the entire AI ecosystem improves.</p>
+
+    <h4>3. Signal data compounds — this is a gold rush.</h4>
+    <p>The first company to build a proprietary signal database has a moat that grows with every experiment. Waiting means letting someone else stake the claim.</p>
+
+    <h4>4. Brands are desperate.</h4>
+    <p>Internal teams can't keep up. Agencies aren't built for this. The gap between "know they should" and "can execute" is massive.</p>
+  </div>
+
+  <!-- Slide 8 -->
+  <div class="slide">
+    <div class="slide-label">Slide 8</div>
+    <h2>Traction</h2>
+
+    <h3>Enterprise (Core)</h3>
+
+    <div class="traction-card">
+      <h4>Jones Road Beauty</h4>
+      <p class="traction-detail">Long-term contract — Consigliere lead AI partner</p>
+      <ul>
+        <li>CEO Cody Plofker — one of the most respected operators in DTC</li>
+        <li>Full system deployment with daily feedback loop</li>
+        <li>Testing on 7-figures/month of JRB marketing spend</li>
+        <li>Flagship case study in development for enterprise rollout</li>
+      </ul>
+    </div>
+
+    <div class="traction-card">
+      <h4>Thrive Causemetics</h4>
+      <p class="traction-detail">Long-term contract</p>
+      <ul>
+        <li>Consigliere AI helped cut $2M/year in agency fees while improving margins</li>
+        <li>Contract started at <strong>$115K MRR</strong>, expanded to <strong>$145K MRR</strong></li>
+      </ul>
+    </div>
+
+    <div class="traction-card">
+      <h4>Wayfair <span style="color: var(--text-muted); font-weight: 400;">(Joss & Main, Birch Lane, AllModern)</span></h4>
+      <p class="traction-detail">Long-term contract</p>
+      <ul>
+        <li>Contract started at <strong>$30K MRR</strong>, expanded to <strong>$155K MRR</strong></li>
+      </ul>
+    </div>
+
+    <div class="traction-card">
+      <h4>Canva</h4>
+      <p class="traction-detail">Enterprise pilot signed H2 2025</p>
+      <ul>
+        <li>Pilot extended Q1 2026 due to exceptional performance</li>
+      </ul>
+    </div>
+
+    <h3>Incubator</h3>
+
+    <div class="traction-card">
+      <h4>Wild Roman</h4>
+      <p class="traction-detail">Men's skincare — The Inflection portfolio company</p>
+      <ul>
+        <li>Co-founder Sahil Bloom is Wild Roman's co-founder and face of brand</li>
+        <li>Full system deployed as growth engine from day one</li>
+        <li>Proving the model in a multi-billion dollar TAM</li>
+      </ul>
+    </div>
+
+    <h3>Platform Validation</h3>
+
+    <div class="traction-card">
+      <h4>Meta SPI Award (2025)</h4>
+      <p class="traction-detail">Approved for Foundational AI Platform</p>
+      <ul>
+        <li>Core platform co-developed with Meta AI engineering</li>
+        <li>IP ownership confirmed as Consigliere Labs (signed agreement)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Slide 9 -->
+  <div class="slide">
+    <div class="slide-label">Slide 9</div>
+    <h2>The Billion-Dollar Version</h2>
+
+    <p><strong>Consigliere becomes the Bloomberg of creative performance.</strong></p>
+
+    <h4>Two engines:</h4>
+
+    <div class="two-col">
+      <div class="col">
+        <h4 style="margin-top: 0;">1. Cash-flow engine (Core)</h4>
+        <ul>
+          <li>High-fee, high-value system deployment</li>
+          <li>Target: 10–20 enterprise brands at scale</li>
+          <li>Each client generates massive signal data for the platform</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4 style="margin-top: 0;">2. Upside engine (Incubator)</h4>
+        <ul>
+          <li>Deploy the same system into early brands</li>
+          <li>Smaller fees + equity stakes</li>
+          <li>Wild Roman is the proof point; potential for 10+ portfolio brands</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p><strong>The long game:</strong> Every experiment Consigliere runs adds to a proprietary dataset — persuasion signals mapped to algorithmic response across platforms. Like Bloomberg built the definitive dataset for financial markets, Consigliere is building the definitive dataset for creative performance.</p>
+      <br>
+      <p>That dataset is the moat. Over time, the system goes from discovering signals to predicting them.</p>
+    </div>
+
+    <div class="flywheel">
+      <p>Services build the data. Data builds the platform. The platform builds the moat.</p>
+    </div>
+  </div>
+
+  <!-- Slide 10 -->
+  <div class="slide">
+    <div class="slide-label">Slide 10</div>
+    <h2>Team</h2>
+
+    <div class="callout">
+      <p>Most AI companies have engineers who don't understand marketing. Most agencies don't have real AI talent. <strong>Consigliere has both.</strong></p>
+    </div>
+
+    <div class="team-section">
+      <div class="team-member">
+        <div class="team-name">Matt Schnuck</div>
+        <div class="team-role">CEO</div>
+        <div class="team-detail">Transformed Rickhouse Media (creative agency) into Consigliere (AI company)</div>
+      </div>
+      <div class="team-member">
+        <div class="team-name">Sahil Bloom</div>
+        <div class="team-role">Co-founder, Strategic Creator Partnerships</div>
+        <div class="team-detail">Co-founder and face of Wild Roman (Incubator proof point). Creator platform provides distribution advantage.</div>
+      </div>
+    </div>
+
+    <h4>AI Team — 30+ years combined AI engineering</h4>
+    <div class="team-section">
+      <div class="team-member">
+        <div class="team-name">Garrett Gunther</div>
+        <div class="team-role">Co-founder, Head of Forward Deployed AI</div>
+        <div class="team-detail">Stanford B.S., M.S. Engineering.</div>
+      </div>
+      <div class="team-member">
+        <div class="team-name">Alex Marx</div>
+        <div class="team-role">Head of AI and Engineering</div>
+        <div class="team-detail">12 years AI/ML. Prev: ChainML, JungleScout.</div>
+      </div>
+      <div class="team-member">
+        <div class="team-name">Martin Detournay</div>
+        <div class="team-role">Founding AI Engineer</div>
+        <div class="team-detail">Building in AI before the transformer paper. Prev: Shopify, McKinsey.</div>
+      </div>
+      <div class="team-member">
+        <div class="team-name">Simon Picard</div>
+        <div class="team-role">Founding AI Engineer</div>
+        <div class="team-detail">10 years data science, ex-startup CTO. Prev: McKinsey.</div>
+      </div>
+      <div class="team-member">
+        <div class="team-name">Jazib Khan</div>
+        <div class="team-role">Staff AI and Data Engineer</div>
+        <div class="team-detail">Prev: TD Bank.</div>
+      </div>
+    </div>
+
+    <h4>Business Team — $5B+ of growth marketing experiments overseen</h4>
+    <div class="team-section">
+      <div class="team-member">
+        <div class="team-name">Jordan Wippell</div>
+        <div class="team-role">Head of Creative Strategy</div>
+      </div>
+      <div class="team-member">
+        <div class="team-name">Alexa Torres</div>
+        <div class="team-role">Head of Creators and Video Production</div>
+      </div>
+      <div class="team-member">
+        <div class="team-name">Steve Cogbill</div>
+        <div class="team-role">Head of Post Production</div>
+      </div>
+      <div class="team-member">
+        <div class="team-name">Danielle Boudreau</div>
+        <div class="team-role">Head of Client Success</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 11 -->
+  <div class="slide">
+    <div class="slide-label">Slide 11</div>
+    <h2>The Ask</h2>
+
+    <p><strong>Raising $4M to:</strong></p>
+    <ul>
+      <li>Build the full gold mining infrastructure</li>
+      <li>Expand AI engineering</li>
+      <li>Scale system deployment across Core clients</li>
+      <li>Seed 2–3 additional Incubator brands</li>
+    </ul>
+
+    <div class="stats" style="margin-top: 32px;">
+      <div class="stat">
+        <div class="stat-value">$4M</div>
+        <div class="stat-label">Raise Amount</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">$33M</div>
+        <div class="stat-label">Valuation Cap</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">SAFE</div>
+        <div class="stat-label">Structure</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 12 -->
+  <div class="slide">
+    <div class="slide-label">Slide 12</div>
+    <h2>Why Invest</h2>
+
+    <ol class="invest-list">
+      <li><div><strong>Real revenue, real logos</strong> — not a concept</div></li>
+      <li><div><strong>Compounding moat</strong> — every experiment adds to a signal database no one can replicate</div></li>
+      <li><div><strong>Bond + call option</strong> — cash flow stability with asymmetric upside</div></li>
+      <li><div><strong>AI tailwinds</strong> — we're building what every brand will need</div></li>
+      <li><div><strong>Meta-validated platform</strong> — co-developed with Meta AI, IP confirmed</div></li>
+      <li><div><strong>Team that's done it</strong> — deep AI engineering + deep domain expertise</div></li>
+    </ol>
+  </div>
+
+  <!-- Slide 13 -->
+  <div class="slide" style="border-bottom: none;">
+    <div class="slide-label">Slide 13 — Close</div>
+    <div class="cta">
+      <h2>Consigliere is building the gold mining infrastructure for modern brands.</h2>
+      <p>The old playbook is dead. The new playbook requires constant sampling, signal detection, and AI-powered execution at scale.</p>
+      <br>
+      <p>Most brands can't do this. We give them the infrastructure so they can.</p>
+      <br>
+      <p style="color: var(--accent); font-weight: 600; font-size: 20px;">Let's talk.</p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
